@@ -2,7 +2,7 @@
 
 ![Architecture](docs/screenshots/architecture.gif)
 
-When a language model is given tools — the ability to read files, browse the web, execute code, call APIs — the security problem changes. The model is no longer just generating text; it is taking actions, and those actions have real consequences. Most AI security work focuses on what the model says. This lab focuses on what it does.
+When a language model is given tools the ability to read files, browse the web, execute code, call APIs the security problem changes. The model is no longer just generating text; it is taking actions, and those actions have real consequences. Most AI security work focuses on what the model says. This lab focuses on what it does.
 
 The lab has two parts. The first is building a working AI agent from scratch using LangChain and a locally running language model, understanding its reasoning loop mechanically before trying to secure it. The second is wrapping a behavioral monitor around every tool call the agent makes, writing a policy that defines what it is and is not allowed to do, and connecting the detections to Splunk. Five attack scenarios demonstrate the threat; five corresponding monitor blocks demonstrate the defense.
 
@@ -10,7 +10,7 @@ The lab has two parts. The first is building a working AI agent from scratch usi
 
 ## The Problem This Solves
 
-Most security tooling for AI focuses on the model itself: jailbreaks, adversarial prompts, training data. This lab focuses on a different layer, the agent's tool use. When a model can read files, execute code, and fetch web content, every one of those capabilities is an attack surface. Prompt injection through a webpage, path traversal through the file tool, malicious code through the code executor, a three-tool exfiltration chain that looks legitimate at every step — none of these require a sophisticated adversary. They require a model that cannot distinguish instructions from data.
+Most security tooling for AI focuses on the model itself: jailbreaks, adversarial prompts, training data. This lab focuses on a different layer, the agent's tool use. When a model can read files, execute code, and fetch web content, every one of those capabilities is an attack surface. Prompt injection through a webpage, path traversal through the file tool, malicious code through the code executor, a three-tool exfiltration chain that looks legitimate at every step  none of these require a sophisticated adversary. They require a model that cannot distinguish instructions from data.
 
 The monitor built here sits between the agent and its tools. Before any action executes, the monitor checks it against a policy. That policy is a YAML file written by hand, with explicit rules about what this agent is and is not permitted to do. Every decision is logged to Splunk. The goal is enforcement, not just observation.
 
@@ -22,7 +22,7 @@ The monitor built here sits between the agent and its tools. Before any action e
 
 The lab runs on a single Ubuntu VM with Ollama serving qwen2.5:7b locally. A Python HTTP server on the same machine serves the malicious pages used in the attack scenarios. Logs from the monitor are shipped to a separate Ubuntu VM running Splunk.
 
----
+
 
 ## Phase 1: Building the Agent
 
@@ -159,8 +159,4 @@ python3 agent.py
 
 The monitor activates automatically when tools.py imports it. The policy file can be edited to test different rule configurations. Logs are written to `logs/agent_monitor.log` on every run.
 
----
 
-## Read the Full Walkthrough
-
-Medium article: [INSERT MEDIUM LINK]
