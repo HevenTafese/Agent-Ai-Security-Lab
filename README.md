@@ -2,9 +2,9 @@
 
 ![Architecture](docs/screenshots/architecture.gif)
 
-When a language model is given tools the ability to read files, browse the web, execute code, call APIs the security problem changes. The model is no longer just generating text; it is taking actions, and those actions have real consequences. Most AI security work focuses on what the model says. This lab focuses on what it does.
+When a language model has the ability to read files, browse the web, execute code, call APIs then the security problem changes. The model is no longer just generating text like chatbots but taking actions, and those actions have real consequences. 
 
-The lab has two parts. The first is building a working AI agent from scratch using LangChain and a locally running language model, understanding its reasoning loop mechanically before trying to secure it. The second is wrapping a behavioral monitor around every tool call the agent makes, writing a policy that defines what it is and is not allowed to do, and connecting the detections to Splunk. Five attack scenarios demonstrate the threat; five corresponding monitor blocks demonstrate the defense.
+This lab has two parts. The first is building a working AI agent from scratch using LangChain and a locally running language model, understanding its reasoning loop mechanically before trying to secure it. The second is wrapping a behavioral monitor around every tool call the agent makes, writing a policy that defines what it is and is not allowed to do, and connecting the detections to Splunk. Five attack scenarios demonstrate the threat; five corresponding monitor blocks demonstrate the defense.
 
 ---
 
