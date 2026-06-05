@@ -2,7 +2,7 @@
 
 ![Architecture](docs/screenshots/architecture.gif)
 
-When a language model has the ability to read files, browse the web, execute code, call APIs then the security problem changes. The model is no longer just generating text like chatbots but taking actions, and those actions have real consequences. 
+When a language model has the ability to read files, browse the web, execute code and call APIs then the security problem changes. The model is no longer just generating text like chatbots but taking actions, and those actions have real consequences. Well in this lab I investigated and focused on this security risk.
 
 This lab has two parts. The first is building a working AI agent from scratch using LangChain and a locally running language model, understanding its reasoning loop mechanically before trying to secure it. The second is wrapping a behavioral monitor around every tool call the agent makes, writing a policy that defines what it is and is not allowed to do, and connecting the detections to Splunk. Five attack scenarios demonstrate the threat; five corresponding monitor blocks demonstrate the defense.
 
